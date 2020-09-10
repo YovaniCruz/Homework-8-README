@@ -20,7 +20,7 @@ const questions = [
       {
         type: "input",
         name: "description",
-        message: "Please enter a description of this project"
+        message: "Please enter a description of this project."
       },
       {
         type: "input",
@@ -32,8 +32,48 @@ const questions = [
         name: "usage",
         message: "Provide usage guidelines for this project."
       },
-     
+      {
+        type: "list",
+        name: "license",
+        message: "Which license do you prefer for this project?",
+        choices: ["GNUAGPLv3", "GNUGPLv3", "GNULGPLv3", "MozillaPublicLicense2.0", "ApacheLicense2.0", "MITLicense", "BoostSoftwareLicense1.0", "TheUnlicense", "None"]
+      },
 ];
+
+// function providing the README format
+function generateREADME(answers) {
+    return `
+    # ${answers.title} ![license badge](https://img.shields.io/static/v1?label=license&message=${answers.license}&color=blue)
+    ${answers.description}
+  
+    ## Table of Contents
+    [Title](#title)
+    [Name](#name)  
+    [Description](#description)  
+    [Installation](#installation)  
+    [Usage](#usage)  
+    [License](#license)  
+  
+
+    ## Title
+    ${answers.tile}
+    
+    ## Name
+    ${answers.name}
+
+    ## Description
+    ${answers.description}
+  
+    ## Installation
+    ${answers.installation}
+  
+    ## Usage
+    ${answers.usage}
+  
+    ## License
+    ${answers.license}
+  `;
+  }
 
 // function to write README file
 function writeToFile(fileName, data) {
