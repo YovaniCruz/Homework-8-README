@@ -2,7 +2,6 @@ const inquirer = require("inquirer");
 const fs = require("fs"); 
 const path = require("path")
 
-
 const generateMarkdown = require("./utils/generateMarkdown")
 
 
@@ -11,24 +10,29 @@ const questions = [
     {
         type: "input",
         name: "title",
-        message: "What is your project title?"
+        message: "What is the title of this project?"
       },
       {
-        type: "input?",
+        type: "input",
+        name: "name",
         message: "What is your GitHub user name?",
-        name: "GitHub",
-    
       },
       {
-        type: "list",
-        message: "What is your preferred method of communication?",
-        name: "contact",
-        choices: [
-          "email",
-          "phone",
-          "telekinesis"
-        ]
-      }   
+        type: "input",
+        name: "description",
+        message: "Please enter a description of this project"
+      },
+      {
+        type: "input",
+        name: "installation",
+        message: "Please enter installation instructions."
+      },
+      {
+        type: "input",
+        name: "usage",
+        message: "Provide usage guidelines for this project."
+      },
+     
 ];
 
 // function to write README file
