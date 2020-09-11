@@ -10,5 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^7.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YovaniCruz/ReadMe.git"
   }
 }
